@@ -68,9 +68,9 @@ public class PopupManager {
         for (int i = 0; i < length - 1; i++) {
             for (int j = i+1; j < length; j++) {
                 if (queuePopup.get(i) > queuePopup.get(j)) {
-                    int temp = i;
-                    i = j;
-                    j = temp;
+                    int temp = queuePopup.get(i);
+                    queuePopup.set(i, queuePopup.get(j));
+                    queuePopup.set(j, temp);
                 }
             }
         }
